@@ -6,6 +6,9 @@
       "variations": {
         "default": {
           "path": "default"
+        },
+        "stable": {
+          "path": "default"
         }
       }
     }

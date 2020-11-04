@@ -583,8 +583,8 @@ class TemplateHelpersTest(basetest.TestCase):
   def testCache(self):
     loader = template_helpers.CachingTemplateLoader()
     template_dir = os.path.join(self._TEST_DATA_DIR, 'languages')
-    test_path = os.path.join(template_dir, 'java/1.0dev/test.tmpl')
-    stable_path = os.path.join(template_dir, 'java/1.0/test.tmpl')
+    test_path = os.path.join(template_dir, 'php/1.0dev/test.tmpl')
+    stable_path = os.path.join(template_dir, 'php/1.0/test.tmpl')
     loader.GetTemplate(test_path, template_dir)
     loader.GetTemplate(stable_path, template_dir)
     self.assertTrue(stable_path in loader._cache)

@@ -39,10 +39,10 @@ class TargetsTest(BaseTargetsTest):
     self.assertTrue('languages' in rawdata)
 
     self.assertTrue(
-        self.targets.VariationsForLanguage('java').IsValid('preview'))
+        self.targets.VariationsForLanguage('php').IsValid('preview'))
     self.assertTrue(
         self.targets.VariationsForLanguage('python').IsValid('stable'))
-    self.assertTrue('displayName' in self.targets.GetLanguage('java'))
+    self.assertTrue('displayName' in self.targets.GetLanguage('php'))
     self.assertTrue('python' in self.targets.Languages())
     self.assertTrue('cmd-line' in self.targets.Platforms())
 
@@ -50,7 +50,7 @@ class TargetsTest(BaseTargetsTest):
 class FeaturesLoadingTest(BaseTargetsTest):
 
   def testGetFeatures(self):
-    variations = self.targets.VariationsForLanguage('java')
+    variations = self.targets.VariationsForLanguage('php')
     features = variations.GetFeatures('preview')
     # Something from the top level
     self.assertEquals(True, features.get('library'))
@@ -60,7 +60,7 @@ class FeaturesLoadingTest(BaseTargetsTest):
 
   def testGetFeaturesWithoutOverride(self):
     """Ask for features of a service without a local override."""
-    variations = self.targets.VariationsForLanguage('java')
+    variations = self.targets.VariationsForLanguage('php')
     features = variations.GetFeatures('not_built_in')
     self.assertEquals('this-is-from-top-level', features.get('releaseVersion'))
     self.assertIsNone(features.get('baseClientLibrary'))

@@ -1,18 +1,20 @@
 {
   "languages": {
-    "java": {
-      "displayName": "Java",
+    "php": {
+      "displayName": "PHP",
       "variations": {
         "preview": {
           "path": "test",
-          "description": "Java libraries for Google APIs at client head.",
+          "description": "PHP libraries for Google APIs at client head.",
           "platforms": ["cmd-line"],
-          "library": true
+          "library": true,
+          "baseClientLibrary": "base-client-library",
+          "releaseVersion": "release-version"
         },
         "stable": {
           "releaseVersion": "will fallback to generator value",
           "path": "stable",
-          "description": "Java libraries for Google APIs.",
+          "description": "PHP libraries for Google APIs.",
           "platforms": ["cmd-line"],
           "library": true
         },
