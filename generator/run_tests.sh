@@ -19,7 +19,8 @@ SUCCEEDED_FILE=${TMP_REPORT_DIR}/succeeded
 FAILED_FILE=${TMP_REPORT_DIR}/failed
 
 cd $TOP/tests
-for test in *_test.py ; do
+find . -name '*_test.py' | while read test
+do
   python $test
   if [ $? == 0 ]; then
     echo "${test}" >> "${SUCCEEDED_FILE}"
