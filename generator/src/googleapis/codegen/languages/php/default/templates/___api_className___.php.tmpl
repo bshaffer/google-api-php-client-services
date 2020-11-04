@@ -1,11 +1,6 @@
 <?php
 {% language php %}{% copyright_block %}
 
-use Google\Client;
-{% if api.methods %}
-use Google\Service\Resource;
-{% endif %}
-
 /**
  * Service definition for {{ api.className }} ({{ api.version }}).
  *
@@ -35,10 +30,10 @@ const {{ authscope.name }} =
    * Constructs the internal representation of the {{ api.className }} service.
    * {% endfilter %}
    *
-   * @param Client $client The client used to deliver requests.
+   * @param Google_Client $client The client used to deliver requests.
    * @param string $rootUrl The root URL used for requests to the service.
    */
-  public function __construct(Client $client, $rootUrl = null)
+  public function __construct(Google_Client $client, $rootUrl = null)
   {
 {% filter noblanklines %}
 {% indent 2 %}
@@ -56,7 +51,7 @@ $this->serviceName = {% literal api.name %};
 {% indent %}
 {% indent %}
 {% if api.methods %}
-$this->base_methods = new Resource(
+$this->base_methods = new Google_Service_Resource(
     $this,
     $this->serviceName,
     '{{ resource.codeName }}',
