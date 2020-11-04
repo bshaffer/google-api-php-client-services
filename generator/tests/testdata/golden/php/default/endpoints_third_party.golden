@@ -36,7 +36,7 @@ class NASA_Service_EccoDomaniIeri extends Google_Service
       "https://www.googleapis.com/auth/userinfo.email";
 
   public $greetings;
-  
+
   /**
    * Constructs the internal representation of the EccoDomaniIeri service.
    *

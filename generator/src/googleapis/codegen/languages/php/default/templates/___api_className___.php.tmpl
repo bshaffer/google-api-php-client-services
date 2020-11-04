@@ -25,7 +25,7 @@ const {{ authscope.name }} =
 {% endfor %}{% endindent %}{% endfilter %}{% endif %}
 
 {% call_template _resource_var resource=api %}
-  {% if api.methods %}private $base_methods;{% endif %}
+{% if api.methods %}  private $base_methods;{% endif %}
   /**{% filter block_comment %}
    * Constructs the internal representation of the {{ api.className }} service.
    * {% endfilter %}
