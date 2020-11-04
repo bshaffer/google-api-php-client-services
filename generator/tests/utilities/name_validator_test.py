@@ -36,7 +36,6 @@ class NameValidatorTest(basetest.TestCase):
     for varname in good_names:
       name_validator.Validate(varname)
     for varname in bad_names:
-      print "'%s'" % varname
       self.assertRaises(name_validator.ValidationError,
                         name_validator.Validate, varname)
 
@@ -48,7 +47,6 @@ class NameValidatorTest(basetest.TestCase):
     for varname in good_names:
       name_validator.ValidateApiName(varname)
     for varname in bad_names:
-      print "'%s'" % varname
       self.assertRaises(name_validator.ValidationError,
                         name_validator.ValidateApiName, varname)
 
@@ -59,7 +57,6 @@ class NameValidatorTest(basetest.TestCase):
     for varname in good_names:
       name_validator.ValidateApiVersion(varname)
     for varname in bad_names:
-      print "'%s'" % varname
       self.assertRaises(name_validator.ValidationError,
                         name_validator.ValidateApiVersion, varname)
 

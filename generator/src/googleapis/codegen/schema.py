@@ -304,7 +304,6 @@ class Schema(data_types.ComplexDataType):
   def _CreateSchemaWithoutProperties(cls, api, name, def_dict, wire_name,
                                      parent):
     if parent:
-      # code objects have __getitem__(), but not .get()
       try:
         pname = parent['id']
       except KeyError:
@@ -312,8 +311,8 @@ class Schema(data_types.ComplexDataType):
       name_to_log = '%s.%s' % (pname, name)
     else:
       name_to_log = name
-    logging.warning('object without properties %s: %s',
-                    name_to_log, def_dict)
+    # logging.warning('object without properties %s: %s',
+    #                 name_to_log, def_dict)
     schema = cls(api, name, def_dict, parent=parent)
     if wire_name:
       schema.SetTemplateValue('wireName', wire_name)

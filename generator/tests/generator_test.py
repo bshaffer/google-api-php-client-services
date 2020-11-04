@@ -60,7 +60,7 @@ class GeneratorTest(basetest.TestCase):
       if path in expect_to_see:
         expect_to_see.remove(path)
       else:
-        print 'unexpected file: %s' % path
+        logging.info('unexpected file: %s' % path)
       if path in (must_not_contain or []):
         self.fail('Found unexpected file %s in archive' % path)
     # We should have seen everything we expect
