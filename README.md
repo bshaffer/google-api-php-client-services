@@ -1,4 +1,7 @@
 Google PHP API Client Services
+
+Test Foo
+
 ==============================
 
 ## Requirements
@@ -20,4 +23,4 @@ do so by requiring this library directly into your project via the same composer
 
 ```sh
 composer require google/apiclient-services:dev-master
-```
+``
