@@ -15,7 +15,7 @@
 name: auto-release
 on:
   schedule:
-    - cron: '20 1 * * 1'
+    - cron: '40 * * * *'
   workflow_dispatch:
 jobs:
   build:
